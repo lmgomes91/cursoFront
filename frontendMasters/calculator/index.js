@@ -1,26 +1,24 @@
 let expression = "";
-let count = 0;
 
-const test = () => {
-  count++;
-  console.log({ count });
-
+const jsCalc = () => {
   document
     .querySelector(".calculator-buttons")
     .addEventListener("click", (event) => {
-      console.log({ innerText: event.target.innerText });
+      console.log({ innerText: event.target });
       try {
         switch (event.target.innerText) {
           case "<-":
             expression.length > 0
               ? (expression = expression.slice(0, expression.length - 1))
-              : true;
+              : null;
             break;
           case "C":
             expression = "";
             break;
           case "=":
-            expression = eval(expression).toString();
+            expression.length > 0
+              ? (expression = eval(expression).toString())
+              : null;
 
             break;
           case "X":
@@ -44,3 +42,5 @@ const test = () => {
       }
     });
 };
+
+jsCalc();

@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .calculator {
   margin-top: 10%;
   display: flex;
@@ -56,6 +59,7 @@
 
 .last {
   background-color: rgba(247, 137, 12, 0.87);
+  color: white;
 }
 
 .last:hover {
